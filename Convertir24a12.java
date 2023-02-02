@@ -18,20 +18,51 @@ public class Convertir24a12 {
         de 24 hrs y comvertirla a formato de 12 hrs
         */
         //08:34:30
-        int horas,minutos,segundos;
+        
         
         Scanner lector=new Scanner(System.in);
-        String v=lector.next();
-        lector=new Scanner(v);
+        String valor=lector.next(); //\d
+        //Obtiene el primer valor del texto despues de dividirlo por los :
+        String strHoras=valor.split(":")[0]; 
+        //Obtiene el segundo valor del texto despues de dividirlo por los :
+        String strMinutos=valor.split(":")[1]; 
+        //Obtiene el segundo valor del texto despues de dividirlo por los :
+        String strSegundos=valor.split(":")[2]; 
+        int horas,minutos,segundos;
+        horas=Integer.parseInt(strHoras);
+        minutos=Integer.parseInt(strMinutos);
+        segundos=Integer.parseInt(strSegundos);
         
-//        horas=lector.nextInt();
-//        minutos=lector.nextInt();
-//        segundos=lector.nextInt();
-        
-        //String valor=lector.next("\\d:\\d:\\d"); //\d
-        String valor=lector.next("[0-9]:"); //\d
-        System.out.println(valor);
-        
+        valor=lector.next(); //\d
+        //Obtiene el primer valor del texto despues de dividirlo por los :
+        strHoras=valor.split(":")[0]; 
+        //Obtiene el segundo valor del texto despues de dividirlo por los :
+        strMinutos=valor.split(":")[1]; 
+        //Obtiene el segundo valor del texto despues de dividirlo por los :
+        strSegundos=valor.split(":")[2]; 
+        int horasB,minutosB,segundosB;
+        horasB=Integer.parseInt(strHoras);
+        minutosB=Integer.parseInt(strMinutos);
+        segundosB=Integer.parseInt(strSegundos);
+        int horasF,minutosF,segundosF;
+        if(segundos<=segundosB){
+            segundosF=segundosB-segundos;  //10 22->12
+        }else{
+            segundosF=60-segundos  + segundosB;  //56 22-> 60-56+22->26
+            minutosB-=1;
+        }
+        if(minutos<=minutosB){
+            minutosF=minutosB-minutos;  //10 22->12
+        }else{
+            minutosF=60-minutos  + minutosB;  //56 22-> 60-56+22->26
+            horasB-=1;
+        }
+        if(horas<=horasB){
+            horasF=horasB-horas;  //10 22->12
+        }else{
+            horasF=24-horas  + horasB;  //56 22-> 60-56+22->26
+        }
+        System.out.println(horasF+":"+minutosF+":"+segundosF);
          
     }
 }
