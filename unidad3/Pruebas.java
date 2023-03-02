@@ -11,17 +11,14 @@ package unidad3;
  */
 public class Pruebas {
     public static void main(String[] args) {
-        int mes=1;
+        int mes=3;
         switch(mes){
             default:
                 System.out.println("Mes no válido");
-                break;
             case 2:
                 System.out.println("Febrero");
-                break;
             case 1:
                 System.out.println("Enero");
-                break;
             
             
         }
