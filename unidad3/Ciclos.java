@@ -34,17 +34,32 @@ public class Ciclos {
         String operacion;
         String cadena;
         Scanner lector=new Scanner(System.in);
-        for(int i=1; i<=1000000;i++){
+        //Repetir un millon de veces o hasta que ingrese algo distinto a E o D
+        //for(int i=1; i<=1000000;i++){
+        //Repetición infinita hasta que se ingrese algo distinto a E o D
+        for(; ;){
             operacion=lector.next();
             //Convertir a mayúscula
             operacion=operacion.toUpperCase();
             if(operacion.equals("E")){
-            
+                cadena= lector.next();
+                for(int j=0; j<cadena.length(); j++){
+                    char p= cadena.charAt(j);
+                    p+=5;
+                    System.out.print(p);
+                    break;
+                }
             }else if(operacion.equals("D")){
-            
+                cadena= lector.next();
+                    for(int j=0; j<cadena.length(); j++){
+                        char p= cadena.charAt(j);
+                        p-=5;
+                        System.out.print(p);
+                    }
             }else{
                 break;
             }
+            System.out.println();
         }
         
     }
