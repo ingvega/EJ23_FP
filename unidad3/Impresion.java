@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package unidad3;
+package fppvf;
 
 import java.util.Scanner;
 
 /**
  *
- * @author paveg
+ * @author cc1
  */
 public class Impresion {
 
@@ -19,30 +19,37 @@ public class Impresion {
         n = leer.nextInt();
         for (int i = 1; i <= n; i++) {
             a = leer.nextInt();
-            String x = "x";
+            String x = "";
             for (int k = 1; k <= a; k++) {
-                System.out.println(x);
                 x += "x";
+                System.out.println(x);
+
             }
             //Ya se imprimió el triángulo con la cúspide
             /*4
             x
             xx
             xxx
-            xxxx
+            xxxx->
+            
              */
             //Imprimir las siguientes líneas
+////            for (int j = 1; j <= a - 1; j++) {
+////                for (int k = a -j; k >= 1; k--) {
+////                    System.out.print("x");
+//////                for(int j=1;j<=k;j++){
+//////                    System.out.print("x");
+//////                }
+//////                System.out.println();
+////                }
+            //}
             for (int j = 1; j <= a - 1; j++) {
-                for (int k = a -j; k >= 1; k--) {
-                    System.out.print("x");
-//                for(int j=1;j<=k;j++){
-//                    System.out.print("x");
-//                }
-//                System.out.println();
-                }
-                
-                System.out.println("");
+                //Quitar una x a la cadena
+                x = x.substring(1);
+                //x=x.substring(0,x.length()-1);
+                System.out.println(x);
             }
+
         }
         /*
         3
